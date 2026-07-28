@@ -1,0 +1,13 @@
+.contactScreen {
+  height: 100vh;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+@media (max-width: 900px) {
+  .contactScreen {
+    height: auto;
+    overflow: visible;
+  }
+}

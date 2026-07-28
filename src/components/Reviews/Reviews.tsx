@@ -49,7 +49,9 @@ export default function Reviews() {
       <div className={styles.grid}>
         {REVIEWS.map(({ text, name, meta, initials }) => (
           <div key={name} className={styles.card}>
-            <div className={styles.stars} aria-label="Оценка 5 из 5">5 из 5</div>
+            <div className={styles.stars} aria-label="Оценка 5 из 5">
+              <span aria-hidden="true">★★★★★</span>
+            </div>
             <p className={styles.text}>{text}</p>
             <div className={styles.author}>
               <div className={styles.avatar}>{initials}</div>

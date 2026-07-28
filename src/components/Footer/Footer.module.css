@@ -2,6 +2,7 @@
 .footer {
   background: #3d2457;
   padding: 44px 120px;
+  height: 160px;
 }
 
 .inner {
@@ -76,6 +77,7 @@
 @media (max-width: 900px) {
   .footer {
     padding: 36px 20px;
+    height: auto;
   }
 
   .inner {

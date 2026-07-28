@@ -6,6 +6,7 @@ import Reviews from "@/components/Reviews/Reviews";
 import Contact from "@/components/Contact/Contact";
 import Footer from "@/components/Footer/Footer";
 import Nav from "@/components/Nav/Nav";
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
@@ -17,9 +18,11 @@ export default function Home() {
         <Services />
         <Pricing />
         <Reviews />
-        <Contact />
+        <div id="contact" className={styles.contactScreen}>
+          <Contact />
+          <Footer />
+        </div>
       </main>
-      <Footer />
     </>
   );
 }

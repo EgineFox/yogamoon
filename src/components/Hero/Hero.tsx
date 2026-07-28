@@ -6,6 +6,27 @@ import styles from './Hero.module.css';
 function Slide1() {
   return (
     <div className={`${styles.slide} ${styles.slide1}`}>
+      <div className={styles.mobileSlide1}>
+        <div className={styles.mobilePhoto}>
+          <Image
+            src="/hero-mobile-1.jpg"
+            alt="Ирина Лындина занимается йогой"
+            fill
+            sizes="100vw"
+            style={{ objectFit: 'cover' }}
+            priority
+          />
+        </div>
+        <div className={styles.mobileCopy}>
+          <p className={styles.mobileLabel}>YOGAMOON · РААНАНА, ОКРУГ АШАРОН</p>
+          <h1 className={styles.mobileHeading}>Ирина Лындина</h1>
+          <p className={styles.mobileSubtitle}>Хатха-йога · Йогатерапия · Йога-нидра</p>
+          <p className={styles.mobileBody}>
+            Сертифицированный преподаватель хатха-йоги и йогатерапии. Помогаю вернуть телу гибкость и силу, а уму - спокойствие.
+          </p>
+          <a href="#contact" className={styles.mobileCta}>✦&nbsp;&nbsp;Записаться на занятие</a>
+        </div>
+      </div>
       
       <svg
         className={styles.bgBlob}
@@ -64,6 +85,23 @@ const PRINCIPLES = [
 function Slide2() {
   return (
     <div className={`${styles.slide} ${styles.slide2}`}>
+      <div className={`${styles.mobileSlide} ${styles.mobileSlide2}`}>
+        <div className={styles.mobilePhoto}>
+          <Image src="/hero-mobile-2.png" alt="Ирина в медитации" fill sizes="100vw" style={{ objectFit: 'fill' }} />
+        </div>
+        <div className={styles.mobileApproach}>
+          <h2>Что происходит на практике</h2>
+          <div className={styles.mobilePrinciples}>
+            {PRINCIPLES.map(([title, desc]) => (
+              <div key={title}>
+                <strong>{title}</strong>
+                <span>{desc}</span>
+              </div>
+            ))}
+          </div>
+          <a href="#contact" className={styles.mobileCta}>Начать практику вместе</a>
+        </div>
+      </div>
       <p className={styles.s2Label}>МОИ ПРИНЦИПЫ</p>
       <h2 className={styles.s2Heading}>Что происходит на практике</h2>
 
@@ -96,6 +134,20 @@ const RESULTS = [
 function Slide3() {
   return (
     <div className={`${styles.slide} ${styles.slide3}`}>
+      <div className={`${styles.mobileSlide} ${styles.mobileSlide3}`}>
+        <div className={styles.mobilePhoto}>
+          <Image src="/hero-slide-3.jpg" alt="Групповое занятие йогой" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center 42%' }} />
+        </div>
+        <div className={styles.mobileResults}>
+          <p className={styles.mobileResultsLabel}>РЕЗУЛЬТАТЫ</p>
+          <h2>Что вы получите</h2>
+          <p className={styles.mobileResultsSub}>После регулярных занятий</p>
+          <ul>
+            {RESULTS.map(item => <li key={item}>✦&nbsp;&nbsp;{item}</li>)}
+          </ul>
+          <a href="#contact" className={`${styles.mobileCta} ${styles.mobileCtaGold}`}>✦&nbsp;&nbsp;Записаться на занятие</a>
+        </div>
+      </div>
       <p className={styles.s3Label}>РЕЗУЛЬТАТЫ</p>
 
       <h2 className={styles.s3Heading}>
@@ -165,11 +217,11 @@ export default function Hero() {
 
       
       {current > 0 && (
-        <button className={`${styles.arrow} ${styles.arrowL}`} onClick={prev} aria-label="Назад">&lt;</button>
+        <button className={`${styles.arrow} ${styles.arrowL}`} onClick={prev} aria-label="Назад">‹</button>
       )}
       
       {current < 2 && (
-        <button className={`${styles.arrow} ${styles.arrowR}`} onClick={next} aria-label="Вперёд">&gt;</button>
+        <button className={`${styles.arrow} ${styles.arrowR}`} onClick={next} aria-label="Вперёд">›</button>
       )}
 
       

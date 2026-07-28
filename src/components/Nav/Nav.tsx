@@ -52,7 +52,6 @@ export default function Nav() {
             alt="Yogamoon"
             width={70}
             height={44}
-             style={{ width: 'auto', height: '56px' }} 
             className={styles.logoImg}
             unoptimized
             priority

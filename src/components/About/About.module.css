@@ -2,7 +2,8 @@
 .section {
   background: #ffffff;
   padding: 72px 120px 40px;
-  min-height: 100svh;
+  height: 100vh;
+  min-height: 0;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
@@ -190,6 +191,7 @@
 @media (max-width: 900px) {
   .section {
     padding: 60px 20px;
+    height: auto;
     min-height: auto;
   }
 
