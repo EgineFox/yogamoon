@@ -1,74 +1,84 @@
 import Image from 'next/image';
 import styles from './Services.module.css';
+import type { Service } from '@/../sanity/lib/queries';
 
-const SERVICES = [
+// ─── Встроенные данные (fallback до настройки CMS) ────────────────────────────
+const FALLBACK_SERVICES = [
   {
-    icon: '/serv-icon-1.png',
-    width: 148,
-    height: 106,
+    _id: 'f1',
+    order: 1,
+    icon: { asset: { url: '/serv-icon-1.png' } },
     title: 'Групповая хатха-йога',
-    desc: 'Занятия в студии Раананы, парк «Экологи Ход аШарон». Мини-группы до 10 человек, каждый в поле зрения, практика адаптирована для вас.',
-    tag: 'Офлайн , Раанана и парк Экологи Од аШарон',
+    description: 'Занятия в студии Раананы, парк «Экологи Ход аШарон». Мини-группы до 10 человек, каждый в поле зрения, практика адаптирована для вас.',
+    tag: 'Офлайн · Раанана и парк Экологи Ход аШарон',
   },
   {
-    icon: '/serv-icon-2.png',
-    width: 120,
-    height: 104,
+    _id: 'f2',
+    order: 2,
+    icon: { asset: { url: '/serv-icon-2.png' } },
     title: 'Йога-нидра',
-    desc: 'Глубокая практика расслабления для восстановления нервной системы, улучшения сна и снижения стресса. Подходит всем.',
+    description: 'Глубокая практика расслабления для восстановления нервной системы, улучшения сна и снижения стресса. Подходит всем.',
     tag: 'Для всех уровней',
   },
   {
-    icon: '/serv-icon-3.png',
-    width: 122,
-    height: 118,
+    _id: 'f3',
+    order: 3,
+    icon: { asset: { url: '/serv-icon-3.png' } },
     title: 'Онлайн-клуб Yogamoon',
-    desc: 'Закрытый клуб «Йога Путь с Ириной»: живые практики, записи тренировок, разбор техники и тёплое сообщество.',
+    description: 'Закрытый клуб «Йога Путь с Ириной»: живые практики, записи тренировок, разбор техники и тёплое сообщество.',
     tag: 'Онлайн',
   },
   {
-    icon: '/serv-icon-4.png',
-    width: 130,
-    height: 115,
+    _id: 'f4',
+    order: 4,
+    icon: { asset: { url: '/serv-icon-4.png' } },
     title: 'Адаптивные занятия',
-    desc: 'Персональная программа, разработанная именно для вас с учётом целей, особенностей тела и здоровья.',
+    description: 'Персональная программа, разработанная именно для вас с учётом целей, особенностей тела и здоровья.',
     tag: 'Офлайн / Онлайн',
   },
   {
-    icon: '/serv-icon-5.png',
-    width: 126,
-    height: 119,
+    _id: 'f5',
+    order: 5,
+    icon: { asset: { url: '/serv-icon-5.png' } },
     title: 'Йогатерапия ОДА',
-    desc: 'Специализированная работа с опорно-двигательным аппаратом. Помогает при болях в спине, шее, коленях. Без насилия над телом.',
+    description: 'Специализированная работа с опорно-двигательным аппаратом. Помогает при болях в спине, шее, коленях. Без насилия над телом.',
     tag: 'Терапевтическая',
   },
-];
+] satisfies Service[];
 
-export default function Services() {
+interface Props {
+  services?: Service[];
+}
+
+export default function Services({ services }: Props) {
+  const items = services ?? FALLBACK_SERVICES;
+
   return (
     <section id="services" className={styles.section}>
       <p className={styles.label}>УСЛУГИ</p>
       <h2 className={styles.heading}>Форматы занятий</h2>
       <p className={styles.sub}>
-        Выберите тот формат, который подходит именно вам, в студии, онлайн или индивидуально.
+        Выберите тот формат, который подходит именно вам — в студии, онлайн или индивидуально.
       </p>
 
       <div className={styles.grid}>
-        {SERVICES.map(({ icon, width, height, title, desc, tag }) => (
-          <div key={title} className={styles.card}>
+        {items.map(({ _id, icon, title, description, tag }) => (
+          <div key={_id} className={styles.card}>
             <div className={styles.cardTop} />
             <div className={styles.cardIcon}>
-              <Image
-                src={icon}
-                alt={title}
-                width={width}
-                height={height}
-                className={styles.cardIconImage}
-              />
+              {icon?.asset?.url && (
+                <Image
+                  src={icon.asset.url}
+                  alt={title}
+                  width={120}
+                  height={100}
+                  className={styles.cardIconImage}
+                />
+              )}
             </div>
             <h3 className={styles.cardTitle}>{title}</h3>
-            <p className={styles.cardDesc}>{desc}</p>
-            <span className={styles.cardTag}>{tag}</span>
+            {description && <p className={styles.cardDesc}>{description}</p>}
+            {tag && <span className={styles.cardTag}>{tag}</span>}
           </div>
         ))}
       </div>

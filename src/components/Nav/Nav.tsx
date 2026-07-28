@@ -12,7 +12,11 @@ const NAV_LINKS = [
   { href: '#reviews',  label: 'Отзывы'   },
 ];
 
-export default function Nav() {
+type Props = {
+  siteName?: string;
+};
+
+export default function Nav({ siteName = 'Yogamoon' }: Props) {
   const [scrolled,  setScrolled]  = useState(false);
   const [menuOpen,  setMenuOpen]  = useState(false);
   const burgerRef = useRef<HTMLButtonElement>(null);
@@ -49,14 +53,14 @@ export default function Nav() {
         <Link href="#hero" className={styles.logo} onClick={handleLinkClick}>
           <Image
             src="/logo.svg"
-            alt="Yogamoon"
+            alt={siteName}
             width={70}
             height={44}
             className={styles.logoImg}
             unoptimized
             priority
           />
-          <span className={styles.logoText}>Yogamoon</span>
+          <span className={styles.logoText}>{siteName}</span>
         </Link>
 
         

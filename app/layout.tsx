@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Cormorant_Garamond } from 'next/font/google';
+import { getSiteSettings } from '@/../sanity/lib/queries';
 import './globals.css';
 
 const inter = Inter({
@@ -15,11 +16,24 @@ const cormorant = Cormorant_Garamond({
   display: 'swap',
 });
 
-export const metadata: Metadata = {
+const fallbackMetadata: Metadata = {
   title: 'Yogamoon | Ирина Лындина | Йога в Раанане',
   description:
     'Индивидуальные и групповые занятия йогой в Раанане (Израиль). Хатха-йога, йога-нидра, йогатерапия ОДА, онлайн-клуб. Мягко, безопасно, осознанно.',
 };
+
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const settings = await getSiteSettings();
+
+    return {
+      title: settings?.seoTitle ?? fallbackMetadata.title,
+      description: settings?.seoDescription ?? fallbackMetadata.description,
+    };
+  } catch {
+    return fallbackMetadata;
+  }
+}
 
 export default function RootLayout({
   children,
