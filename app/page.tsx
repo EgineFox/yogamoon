@@ -32,7 +32,7 @@ export default async function Home() {
 
   return (
     <>
-      <Nav siteName={siteSettings?.siteName} />
+      <Nav />
       <main>
         <Hero slides={heroSlides.length ? heroSlides : undefined} />
         <About />
