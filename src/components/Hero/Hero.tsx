@@ -150,15 +150,14 @@ function Slide3() {
       </div>
       <p className={styles.s3Label}>РЕЗУЛЬТАТЫ</p>
 
-      <h2 className={styles.s3Heading}>
-        Что вы<br />получите
-      </h2>
+        <h2 className={styles.s3Heading}>Что вы получите</h2>
 
       <p className={styles.s3Sub}>После регулярных занятий</p>
 
       <ul className={styles.s3List}>
         {RESULTS.map((item, i) => (
           <li key={i} className={styles.s3Item}>
+            <span className={styles.s3Star}>✦</span>
             {item}
           </li>
         ))}
@@ -166,7 +165,7 @@ function Slide3() {
 
       <a href="#contact" className={styles.btnGold}>Записаться на занятие</a>
 
-     
+      <div className={styles.s3Moon} aria-hidden="true" />
       
       <div className={styles.s3Photo}>
         <Image src="/hero-slide-3.jpg" alt="Групповое занятие" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" loading="eager"/>
@@ -217,7 +216,13 @@ export default function Hero() {
 
       
       {current > 0 && (
-        <button className={`${styles.arrow} ${styles.arrowL}`} onClick={prev} aria-label="Назад">‹</button>
+        <button
+          className={`${styles.arrow} ${styles.arrowL} ${current === 2 ? styles.arrowOnDark : ''}`}
+          onClick={prev}
+          aria-label="Назад"
+        >
+          ‹
+        </button>
       )}
       
       {current < 2 && (

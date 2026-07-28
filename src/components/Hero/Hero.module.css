@@ -221,9 +221,9 @@
 .s3Heading {
   position: absolute;
   left: 8.33%;
-  top: 15.43%;
+  top: 21.5%;
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 4.44vw; 
+  font-size: 64px;
   font-weight: 500;
   color: #ffffff;
   line-height: 1.1;
@@ -236,7 +236,7 @@
   left: 8.33%;
   top: 38.28%;
   font-family: 'Inter', sans-serif;
-  font-size: 1.11vw;
+  font-size: 16px;
   font-weight: 400;
   color: #e5deff;
   margin: 0;
@@ -258,7 +258,7 @@
 
 .s3Item {
   font-family: 'Inter', sans-serif;
-  font-size: 1.04vw; 
+  font-size: 15px;
   font-weight: 400;
   color: #ffffff;
   display: flex;
@@ -273,15 +273,15 @@
   position: absolute;
   left: 8.33%;
   top: 85.43%;
-  width: 15.28%; 
-  height: 7.14%; 
+  width: 220px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #c4a66b;
   color: #fff;
   font-family: 'Inter', sans-serif;
-  font-size: 0.97vw;
+  font-size: 14px;
   font-weight: 600;
   border-radius: 6px;
   text-decoration: none;
@@ -303,12 +303,23 @@
   user-select: none;
 }
 
+.s3Moon {
+  position: absolute;
+  top: -80px;
+  right: 27%;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.09);
+  pointer-events: none;
+}
+
 
 .s3Photo {
   position: absolute;
   right: 0;
   top: 0;
-  width: 37.5%; 
+  width: 34%;
   height: 100%;
   overflow: hidden;
 }
@@ -371,6 +382,11 @@
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
 .arrow:hover { background: #3d2457; }
+.arrowOnDark {
+  background: #ffffff;
+  color: #7b5ea7;
+}
+.arrowOnDark:hover { background: #f4f0fa; }
 .arrowL { left: 2.08%; }  
 .arrowR { right: 2.08%; }
 
@@ -450,7 +466,8 @@
   .slide3 > .s3List,
   .slide3 > .btnGold,
   .slide3 > .s3Photo,
-  .slide3 > .s3Deco {
+  .slide3 > .s3Deco,
+  .slide3 > .s3Moon {
     display: none;
   }
 
