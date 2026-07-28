@@ -1,0 +1,317 @@
+
+.section {
+  background: #ffffff;
+  padding: 72px 120px 40px;
+  min-height: 100svh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #c9a84c;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+}
+
+.heading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 46px;
+  font-weight: 500;
+  color: #3d2457;
+  margin: 0 0 14px 0;
+  line-height: 1.1;
+}
+
+.sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #5c4878;
+  line-height: 1.6;
+  margin: 0 0 40px 0;
+  max-width: 680px;
+}
+
+
+.sectionTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #3d2457;
+  margin: 32px 0 0 0;
+}
+
+
+.divider {
+  border: none;
+  border-top: 1px solid #e0d8ee;
+  margin: 12px 0 20px 0;
+}
+
+
+.gridGroup {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+
+.card {
+  background: #faf8ff;
+  border-radius: 12px;
+  padding: 22px 20px 24px;
+  position: relative;
+}
+
+
+.cardPopular {
+  background: #7b5ea7;
+}
+
+.cardPopular .cardTitle,
+.cardPopular .cardPrice,
+.cardPopular .cardSub,
+.cardPopular .cardNote {
+  color: #ffffff;
+}
+
+.cardTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3d2457;
+  margin: 0 0 10px 0;
+}
+
+
+.cardPrice {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #7b5ea7;
+  margin: 0 0 6px 0;
+  line-height: 1;
+}
+
+.cardPopular .cardPrice {
+  color: #ffffff;
+}
+
+.cardSub {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #7b5ea7;
+  margin: 0 0 8px 0;
+}
+
+.cardNote {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #5c4878;
+  margin: 0;
+}
+
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #c9a84c;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+
+.gridClub {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.clubCard {
+  background: #faf8ff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  position: relative;
+}
+
+
+.clubCardBest {
+  background: #4c3c6b;
+}
+
+.clubCardBest .clubTitle,
+.clubCardBest .clubPrice,
+.clubCardBest .clubPeriod,
+.clubCardBest .clubFeatures li {
+  color: #ffffff;
+}
+
+.clubCardBest .star {
+  color: #c9a84c;
+}
+
+.clubTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3d2457;
+  margin: 0 0 10px 0;
+}
+
+.clubPrice {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 46px;
+  font-weight: 500;
+  color: #7b5ea7;
+  margin: 0 0 4px 0;
+  line-height: 1;
+}
+
+.clubCardBest .clubPrice {
+  color: #ffffff;
+}
+
+.clubPeriod {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #7b5ea7;
+  margin: 0 0 16px 0;
+}
+
+.clubFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.clubFeatures li {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #5c4878;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.star {
+  color: #c9a84c;
+  flex-shrink: 0;
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+
+.badgeBest {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #c9a84c;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+
+@media (max-width: 900px) {
+  .section {
+    padding: 48px 20px;
+    min-height: auto;
+  }
+
+  .gridGroup,
+  .gridClub {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .heading {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 560px) {
+  .gridGroup,
+  .gridClub {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ── Интерактивность: кликабельные карточки ── */
+
+.card,
+.clubCard {
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+.card:hover,
+.clubCard:hover {
+  filter: brightness(0.97);
+}
+
+/* Активная карточка — GROUP / INDIVIDUAL */
+.cardActive {
+  background: #7b5ea7;
+}
+.cardActive .cardTitle,
+.cardActive .cardPrice,
+.cardActive .cardSub,
+.cardActive .cardNote {
+  color: #ffffff;
+}
+
+/* Активная карточка — CLUB */
+.clubCardActive {
+  background: #4c3c6b;
+}
+.clubCardActive .clubTitle,
+.clubCardActive .clubPrice,
+.clubCardActive .clubPeriod,
+.clubCardActive .clubFeatures li {
+  color: #ffffff;
+}
+.clubCardActive .star {
+  color: #c9a84c;
+}
+
+/* Золотая кнопка записи — внутри выбранной карточки */
+.cardWaBtn {
+  display: block;
+  margin-top: 14px;
+  background: #c9a84c;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 0;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: background 0.2s;
+}
+
+.cardWaBtn:hover {
+  background: #b8943e;
+}

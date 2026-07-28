@@ -1,0 +1,149 @@
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px;
+}
+
+
+.card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+  width: min(800px, 90vw);
+  height: min(90vh, 900px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 48px 28px;
+}
+
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f2edf7;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #2d2040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.closeBtn:hover { background: #e0d5f0; }
+
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 200px;
+  max-height: 520px;
+}
+
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2d2040;
+  text-align: center;
+  margin: 20px 0 16px;
+  line-height: 1.4;
+  margin-block: 20px 16px;
+}
+
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.counter {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: rgba(45, 32, 64, 0.5);
+  white-space: nowrap;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dotOff {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d4c8ea;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+.dotOff:hover { background: #b8a8d0; }
+
+.dotOn {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c9a84c;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+
+.prevBtn,
+.nextBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(76, 60, 107, 0.9);
+  border: none;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.prevBtn:hover,
+.nextBtn:hover { background: #3d2457; }
+
+
+@media (max-width: 600px) {
+  .overlay {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .prevBtn,
+  .nextBtn {
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+  }
+
+  .card {
+    padding: 48px 20px 20px;
+  }
+}

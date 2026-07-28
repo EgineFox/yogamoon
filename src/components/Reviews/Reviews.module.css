@@ -1,0 +1,143 @@
+
+.section {
+  background: #4c3c6b;
+  padding: 72px 120px 40px;
+  min-height: 100svh;
+  position: relative;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.quoteDeco {
+  position: absolute;
+  left: 40px;
+  top: 10px;
+  font-size: 220px;
+  line-height: 1;
+  color: #ffffff;
+  opacity: 0.06;
+  font-family: Georgia, serif;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+.label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #c9a84c;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+  position: relative;
+}
+
+
+.heading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 46px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 40px 0;
+  line-height: 1.1;
+  position: relative;
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+.stars {
+  color: #c9a84c;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+
+.text {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #e8e0f5;
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #7b5ea7;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+
+.name {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+
+.meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #b8a8d0;
+  margin: 0;
+}
+
+
+@media (max-width: 900px) {
+  .section {
+    padding: 48px 20px;
+    min-height: auto;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .heading {
+    font-size: 34px;
+  }
+}
