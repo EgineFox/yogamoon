@@ -5,6 +5,13 @@
   scroll-snap-stop: always;
 }
 
+@media (max-height: 720px) and (min-width: 901px) {
+  .contactScreen {
+    height: auto;
+    overflow: visible;
+  }
+}
+
 @media (max-width: 900px) {
   .contactScreen {
     height: auto;

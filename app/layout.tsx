@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Cormorant_Garamond } from 'next/font/google';
 import { getSiteSettings } from '@/../sanity/lib/queries';
+import ScrollRestoration from '@/components/ScrollRestoration/ScrollRestoration';
 import './globals.css';
 
 const inter = Inter({
@@ -42,7 +43,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru" className={`${inter.variable} ${cormorant.variable}`}>
-      <body>{children}</body>
+      <body>
+        <ScrollRestoration />
+        {children}
+      </body>
     </html>
   );
 }

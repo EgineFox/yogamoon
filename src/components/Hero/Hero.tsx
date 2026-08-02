@@ -255,7 +255,7 @@ export default function Hero({ slides }: Props) {
 
   useEffect(() => {
     if (paused || reducedMotion) return;
-    const t = setInterval(() => setCurrent(c => (c + 1) % 3), 6000);
+    const t = setInterval(() => setCurrent(c => (c + 1) % 3), 10000);
     return () => clearInterval(t);
   }, [paused, reducedMotion]);
 

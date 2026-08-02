@@ -137,6 +137,14 @@
 }
 
 
+@media (max-height: 720px) and (min-width: 901px) {
+  .section {
+    height: auto;
+    min-height: auto;
+    overflow: visible;
+  }
+}
+
 @media (max-width: 900px) {
   .section {
     padding: 40px 20px;

@@ -18,8 +18,8 @@ const FALLBACK_CONTACTS: ContactRow[] = [
   { icon: '/contact-icon-whatsapp.png', width: 48, height: 48, label: 'WhatsApp / Телефон', value: '+972-51-206-0874',                     href: 'https://wa.me/972512060874' },
   { icon: '/contact-icon-telegram.svg',  width: 24, height: 24, label: 'Telegram',           value: '@irenyarovaya',                        href: 'https://t.me/irenyarovaya' },
   { icon: '/contact-icon-instagram.png', width: 48, height: 48, label: 'Instagram',          value: '@irina_yogamoon',                      href: 'https://instagram.com/irina_yogamoon' },
-  { icon: '/contact-icon-facebook.png',  width: 48, height: 48, label: 'Facebook',           value: 'Irina_yoga_israel',                    href: 'https://facebook.com/Irina_yoga_israel' },
-  { icon: '/contact-icon-location.png',  width: 36, height: 48, label: 'Студия офлайн',      value: 'Раанана, парк «Экологи», Ход аШарон', href: null },
+  { icon: '/contact-icon-facebook.png',  width: 48, height: 48, label: 'Facebook',           value: 'Irina_yoga_israel',                    href: 'https://www.facebook.com/IrinaYogamoon' },
+  { icon: '/contact-icon-location.png',  width: 36, height: 48, label: 'Студия офлайн',      value: 'Раанана, парк «Экологи», Ход аШарон', href: 'https://maps.app.goo.gl/TAuWqvfm16k3NS316' },
 ];
 
 const FALLBACK_WA = '972512060874';

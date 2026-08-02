@@ -186,6 +186,14 @@
 }
 
 
+@media (max-height: 720px) and (min-width: 901px) {
+  .section {
+    height: auto;
+    min-height: auto;
+    padding-top: 88px;
+  }
+}
+
 @media (max-width: 900px) {
   .section {
     padding: 60px 20px;

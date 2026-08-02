@@ -1,7 +1,7 @@
 
 .section {
   background: #4c3c6b;
-  padding: 72px 120px 40px;
+  padding: 72px clamp(48px, 8.33vw, 120px) 40px;
   height: 100vh;
   min-height: 0;
   position: relative;
@@ -127,6 +127,13 @@
   margin: 0;
 }
 
+
+@media (max-height: 720px) and (min-width: 901px) {
+  .section {
+    height: auto;
+    min-height: auto;
+  }
+}
 
 @media (max-width: 900px) {
   .section {
